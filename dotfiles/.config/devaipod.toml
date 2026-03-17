@@ -1,0 +1,24 @@
+# Default image for repos without devcontainer.json
+default-image = "quay.io/rbean/devcontainer:latest
+
+[dotfiles]
+url = "https://github.com/ralphbean/dotfiles"
+script = "install-dotfiles.sh"
+
+# These are needed by the agent
+[env.vars]
+VERTEX_LOCATION = "global"
+GOOGLE_CLOUD_PROJECT = "itpc-gcp-pnd-pe-eng-claude"
+
+# Pass secrets to containers via podman secrets (more secure than env vars/bind mounts)
+# Create secrets with:
+#   cat ~/.config/gh-full | podman secret create gh_token -
+#   cat ~/.config/gcloud/application_default_credentials.json | podman secret create devaipod_google_application_credentials -
+[trusted]
+# Token-based secrets (value injected as env var)
+secrets = ["GH_TOKEN=gh_token"]
+# File-based secrets (mounted at /run/secrets/{name}, env var set to path)
+file_secrets = ["GOOGLE_APPLICATION_CREDENTIALS=gcloud-adc"]
+
+[service-gator.gh]
+read = true

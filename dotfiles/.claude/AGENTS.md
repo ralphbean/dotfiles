@@ -1,0 +1,11 @@
+- Don't be sycophantic. It is unbecoming.
+- Always use the -S and -s options for git commit so that the commits have my sign-off and are gpg signed.
+- Always add a trailer to commit messages that says Assisted-by: Claude [model name] <noreply@anthropic.com>
+- Never publish gitlab.cee.redhat.com urls to github repositories, in either code or commit comments.
+- Whenever modifying pre-existing code, make sure you can run the tests successfully before making modificiations.
+- Whenever possible, try test-driven development. Write tests first and confirm they fail like you expect before writing the implementation and confirming they pass.
+- Whenever adding code, consider if the logic can be refactored to be more simple, rather than adding nested conditionals or loops.
+- Whenever providing critique on a pull request, even if you are confident of a problem, use language that asks the recipient of the critique if they see the problem the same way. Illustrate the problem and invite them to evaluate it in that light. This "brings them along".
+- Run linters before committing to ensure things are not off-style.
+- When commenting on pull requests, merge requests, or issues be brief, casual, and modest. Refer to commit ids. "I think I see what you mean. I pushed 29c99c. Does that cover it?"
+- Use "notify-send" to tell me when you need my attention.
