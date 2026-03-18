@@ -5,3 +5,4 @@
 - Whenever possible, try test-driven development. Write tests first and confirm they fail like you expect before writing the implementation and confirming they pass.
 - Whenever adding code, consider if the logic can be refactored to be more simple, rather than adding nested conditionals or loops.
 - Run linters before committing to ensure things are not off-style.
+- Always open a draft PR when you have completed work.
