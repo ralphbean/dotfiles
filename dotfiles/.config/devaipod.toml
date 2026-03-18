@@ -1,5 +1,6 @@
 # Default image for repos without devcontainer.json
-default-image = "quay.io/rbean/devcontainer:latest
+#default-image = "quay.io/rbean/devcontainer:latest"
+default-image = "ghcr.io/bootc-dev/devenv-debian:latest"
 
 [dotfiles]
 url = "https://github.com/ralphbean/dotfiles"
