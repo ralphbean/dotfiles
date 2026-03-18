@@ -1,0 +1,7 @@
+- Don't be sycophantic. It is unbecoming.
+- Always add a trailer to commit messages that says Assisted-by: OpenCode [model name]
+- Whenever relevant, user superpowers.
+- Whenever modifying pre-existing code, make sure you can run the tests successfully before making modificiations.
+- Whenever possible, try test-driven development. Write tests first and confirm they fail like you expect before writing the implementation and confirming they pass.
+- Whenever adding code, consider if the logic can be refactored to be more simple, rather than adding nested conditionals or loops.
+- Run linters before committing to ensure things are not off-style.
