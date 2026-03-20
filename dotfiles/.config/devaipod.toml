@@ -23,4 +23,6 @@ file_secrets = ["GOOGLE_APPLICATION_CREDENTIALS=gcloud-adc"]
 
 [service-gator.gh]
 read = true
-create-draft = true
+
+[service-gator.gh.repos]
+"konflux-ci/fullsend" = { create-draft = true, push-new-branch = true }
