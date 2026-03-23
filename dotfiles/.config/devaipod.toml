@@ -6,10 +6,14 @@ default-image = "ghcr.io/bootc-dev/devenv-debian:latest"
 url = "https://github.com/ralphbean/dotfiles"
 script = "install-dotfiles.sh"
 
+[tls]
+extra_ca_certs = ["/etc/pki/tls/certs/ca-bundle.crt"]
+
 # These are needed by the agent
 [env.vars]
 VERTEX_LOCATION = "global"
 GOOGLE_CLOUD_PROJECT = "itpc-gcp-pnd-pe-eng-claude"
+GITLAB_HOST = "https://gitlab.cee.redhat.com"
 
 # Pass secrets to containers via podman secrets (more secure than env vars/bind mounts)
 # Create secrets with:
@@ -17,7 +21,7 @@ GOOGLE_CLOUD_PROJECT = "itpc-gcp-pnd-pe-eng-claude"
 #   cat ~/.config/gcloud/application_default_credentials.json | podman secret create devaipod_google_application_credentials -
 [trusted]
 # Token-based secrets (value injected as env var)
-secrets = ["GH_TOKEN=gh_token"]
+secrets = ["GH_TOKEN=gh_token", "GITLAB_TOKEN=gitlab_cee_token"]
 # File-based secrets (mounted at /run/secrets/{name}, env var set to path)
 file_secrets = ["GOOGLE_APPLICATION_CREDENTIALS=gcloud-adc"]
 
@@ -26,3 +30,9 @@ read = true
 
 [service-gator.gh.repos]
 "konflux-ci/fullsend" = { create-draft = true, push-new-branch = true }
+
+[service-gator.gl]
+read = true
+
+[service-gator.gl.repos]
+"pnd/ai/radar" = { create-draft = true, push-new-branch = true }
