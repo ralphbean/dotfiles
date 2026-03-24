@@ -12,7 +12,7 @@ script = "install-dotfiles.sh"
 # These are needed by the agent
 [env.vars]
 VERTEX_LOCATION = "global"
-GOOGLE_CLOUD_PROJECT = "fullsend-578951"  # Just testing
+GOOGLE_CLOUD_PROJECT = "itpc-gcp-pnd-pe-eng-claude"
 GITLAB_HOST = "https://gitlab.cee.redhat.com"
 
 # Pass secrets to containers via podman secrets (more secure than env vars/bind mounts)
@@ -23,8 +23,7 @@ GITLAB_HOST = "https://gitlab.cee.redhat.com"
 # Token-based secrets (value injected as env var)
 secrets = ["GH_TOKEN=gh_token", "GITLAB_TOKEN=gitlab_cee_token"]
 # File-based secrets (mounted at /run/secrets/{name}, env var set to path)
-#file_secrets = ["GOOGLE_APPLICATION_CREDENTIALS=gcloud-adc"]
-file_secrets = ["GOOGLE_APPLICATION_CREDENTIALS=devaipod_fullsend_tmp_creds"]
+file_secrets = ["GOOGLE_APPLICATION_CREDENTIALS=gcloud-adc"]
 
 [service-gator.gh]
 read = true

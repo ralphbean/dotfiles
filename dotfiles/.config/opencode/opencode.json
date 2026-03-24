@@ -1,5 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "google-vertex/gemini-2.5-pro@default",
+  "model": "google-vertex-anthropic/claude-opus-4-6@default",
   "plugin": ["superpowers@git+https://github.com/obra/superpowers.git"]
+
 }
