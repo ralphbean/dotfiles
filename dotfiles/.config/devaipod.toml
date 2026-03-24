@@ -31,8 +31,8 @@ read = true
 [service-gator.gh.repos]
 "konflux-ci/fullsend" = { create-draft = true, push-new-branch = true }
 
-[service-gator.gl]
+[service-gator.gitlab]
 read = true
 
-[service-gator.gl.repos]
+[service-gator.gitlab.repos]
 "pnd/ai/radar" = { create-draft = true, push-new-branch = true }
