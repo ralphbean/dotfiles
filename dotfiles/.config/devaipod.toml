@@ -30,6 +30,7 @@ read = true
 
 [service-gator.gh.repos]
 "konflux-ci/fullsend" = { create-draft = true, push-new-branch = true }
+"ralphbean/hack" = { create-draft = true, push-new-branch = true }
 
 #[service-gator.gitlab]
 #read = true
