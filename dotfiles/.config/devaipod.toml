@@ -20,7 +20,7 @@ GOOGLE_CLOUD_PROJECT = "itpc-gcp-pnd-pe-eng-claude"
 #   cat ~/.config/gcloud/application_default_credentials.json | podman secret create devaipod_google_application_credentials -
 [trusted]
 # Token-based secrets (value injected as env var)
-secrets = ["GH_TOKEN=gh_token"]
+secrets = ["GH_TOKEN=gh_token", "BOTSEND_GH_TOKEN=botsend_token"]
 # File-based secrets (mounted at /run/secrets/{name}, env var set to path)
 file_secrets = ["GOOGLE_APPLICATION_CREDENTIALS=gcloud-adc"]
 
