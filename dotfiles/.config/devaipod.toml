@@ -10,6 +10,9 @@ script = "install-dotfiles.sh"
 #extra_ca_certs = ["/certs/2022-IT-Root-CA.pem", "/certs/2015-RH-IT-Root-CA.pem"]
 
 # These are needed by the agent
+[env]
+allowlist = ["E2E_GITHUB_PASSWORD"]
+
 [env.vars]
 VERTEX_LOCATION = "global"
 GOOGLE_CLOUD_PROJECT = "itpc-gcp-pnd-pe-eng-claude"
