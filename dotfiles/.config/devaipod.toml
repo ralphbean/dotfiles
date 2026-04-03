@@ -10,9 +10,6 @@ script = "install-dotfiles.sh"
 #extra_ca_certs = ["/certs/2022-IT-Root-CA.pem", "/certs/2015-RH-IT-Root-CA.pem"]
 
 # These are needed by the agent
-[env]
-allowlist = ["E2E_GITHUB_PASSWORD"]
-
 [env.vars]
 VERTEX_LOCATION = "global"
 GOOGLE_CLOUD_PROJECT = "itpc-gcp-pnd-pe-eng-claude"
@@ -24,9 +21,9 @@ E2E_GITHUB_USERNAME = "botsend"
 #   cat ~/.config/gcloud/application_default_credentials.json | podman secret create devaipod_google_application_credentials -
 [trusted]
 # Token-based secrets (value injected as env var)
-secrets = ["GH_TOKEN=gh_token", "E2E_GITHUB_PASSWORD=botsend_token"]
+secrets = ["GH_TOKEN=gh_token"]
 # File-based secrets (mounted at /run/secrets/{name}, env var set to path)
-file_secrets = ["GOOGLE_APPLICATION_CREDENTIALS=gcloud-adc"]
+file_secrets = ["GOOGLE_APPLICATION_CREDENTIALS=gcloud-adc", "E2E_GITHUB_PASSWORD_FILE=botsend_token"]
 
 [service-gator.gh]
 read = true
